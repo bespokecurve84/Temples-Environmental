@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temples Environmental</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+    header { background: #004225; color: white; padding: 1rem; text-align: center; }
+    nav { background: #026440; color: white; padding: 1rem; text-align: center; }
+    nav a { color: white; margin: 0 1rem; text-decoration: none; }
+    section { padding: 2rem; max-width: 900px; margin: auto; }
+    .subscription-plans div { margin-bottom: 1rem; padding: 1rem; background: white; border-radius: 8px; }
+    footer { background: #004225; color: white; text-align: center; padding: 1rem; }
+    .testimonial, .contact-info { background: white; margin-top: 1rem; padding: 1rem; border-radius: 8px; }
+    #loginForm { display: none; background: white; padding: 1rem; border-radius: 8px; margin-top: 1rem; }
+    #subscriberContent { display: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Temples Environmental</h1>
+    <p>Septic and Well Maintenance Experts</p>
+  </header>
+  <nav>
+    <a href="#about">About Us</a>
+    <a href="#temples-on-demand">Temples On Demand</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Temples Environmental is committed to providing top-notch septic and well maintenance services. Our experienced team ensures your systems are clean, safe, and functional year-round.</p>
+  </section>
+
+  <section id="temples-on-demand">
+    <h2>Temples On Demand</h2>
+    <p><strong>Login to access your subscription benefits.</strong></p>
+
+    <form id="loginForm">
+      <label for="username">Username:</label>
+      <input type="text" id="username" required />
+      <br />
+      <label for="password">Password:</label>
+      <input type="password" id="password" required />
+      <br />
+      <button type="button" onclick="login()">Login</button>
+    </form>
+
+    <button onclick="showLoginForm()">Click Here to Login</button>
+
+    <div id="subscriberContent">
+      <div class="subscription-plans">
+        <div><strong>Wells Only:</strong> $50/month</div>
+        <div><strong>Septic Only:</strong> $50/month</div>
+        <div><strong>Septic + Wells:</strong> $75/month</div>
+      </div>
+      <h3>Subscriber Benefits</h3>
+      <ul>
+        <li>Access to Self Maintenance Tutorials</li>
+        <li>Instant Message Support (Read/Delivered Receipts)</li>
+        <li>Priority Customer Service</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="tutorials">
+    <h2>Self Maintenance Tutorials (Subscribers Only)</h2>
+    <p id="tutorialNotice">Login required to view step-by-step guides on septic and well maintenance.</p>
+    <div id="tutorialContent" style="display:none;">
+      <ul>
+        <li>How to Check Your Septic System</li>
+        <li>Routine Well Maintenance Tips</li>
+        <li>Signs of Trouble and What to Do</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2>Customer Testimonials</h2>
+    <div class="testimonial">
+      <p>"Temples On Demand saved us during an emergency. Best $75 we spend each month!" – Sarah T.</p>
+    </div>
+    <div class="testimonial">
+      <p>"The tutorials are clear and easy to follow. I feel empowered maintaining my system!" – John M.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+      <p><strong>Phone:</strong> 407-572-6984</p>
+      <p><strong>Email:</strong> info@templesenvironmental.com</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Temples Environmental. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function showLoginForm() {
+      document.getElementById('loginForm').style.display = 'block';
+    }
+
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Basic dummy credentials (in real deployment, use backend auth)
+      if (username === 'subscriber' && password === 'access123') {
+        document.getElementById('subscriberContent').style.display = 'block';
+        document.getElementById('tutorialContent').style.display = 'block';
+        document.getElementById('tutorialNotice').style.display = 'none';
+        alert('Login successful!');
+      } else {
+        alert('Invalid credentials.');
+      }
+    }
+  </script>
+</body>
+</html>
